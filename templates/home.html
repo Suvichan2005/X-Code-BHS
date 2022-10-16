@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelthOne</title>
+    <link
+      rel="shortcut icon"
+      href="../static/images/22905-6-health-file_64x64.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+    <div class="navbar" id="mynavbar">
+      <div class="navgrp left" style="width: 15vw">
+        <a href="#home">Logo</a>
+      </div>
+      <div class="navgrp right" style="width: 62vw">
+        <a href="#hero" class="nav-item active">Home</a>
+        <a href="#div2" class="nav-item">Why MegaOne</a>
+        <a href="#div3" class="nav-item">Appointment</a>
+        <button onclick="openLogin()">Login/Register</button>
+      </div>
+    </div>
+
+    <section class="hero" id="hero">
+      <div class="hero-caption">
+        <div class="hero-line-1">We care for your</div>
+        <section class="hero-line-2">
+          Medical <a class="item-1">Health</a>
+        </section>
+      </div>
+      <p>
+        Purus gravida quis blandit turpis cursus in hac habitasse platea. Et
+        sollicitudin ac orci phasellus egestas. Vulputate eu scelerisque felis
+        imperdiet proin fermentum leo vel. Vitae elementum.
+      </p>
+      <a href="#"><button class="btn">Learn More</button></a>
+    </section>
+
+    <div id="snackbar">{{ msg1 }}</div>
+
+    <script>
+      var snackbar = document.getElementById('snackbar');
+      if (snackbar.innerHTML != '')
+      {snackbar.classList.add('show')}
+    </script>
+
+    <!-- -----FLIPING CARDS---- -->
+    <table
+      style="
+        width: 62%;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-120px);
+      "
+    >
+      <tr>
+        <td class="fliptd">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../static/images/card-1.png"
+                  alt=""
+                  style="height: 100%; width: 100%"
+                />
+              </div>
+              <div class="flip-card-back">
+                <img
+                  src="../static/images/card-1-back.png"
+                  alt=""
+                  style="height: 100%; width: 100%"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+        <td class="fliptd">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../static/images/card-2.png"
+                  style="width: 100%; height: 100%"
+                />
+              </div>
+              <div class="flip-card-back">
+                <img
+                  src="../static/images/card-2-back.png"
+                  alt=""
+                  style="width: 100%; height: 100%"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+
+        <td class="fliptd">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img
+                  src="../static/images/card-3.png"
+                  style="width: 100%; height: 100%"
+                />
+              </div>
+              <div class="flip-card-back">
+                <img
+                  src="../static/images/card-3-back.png"
+                  alt=""
+                  style="width: 100%; height: 100%"
+                />
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!-------------SECTION-2------ -->
+
+    <section class="section-2" id="div2">
+      <div class="section-2-line-1">Medical health at its best</div>
+      <div class="family-value">
+        We Value Your<br /><a class="family-style">Family</a> More<br />Than
+        Anyone<br />Else.
+      </div>
+      <p>
+        Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit.
+        Vestibulum auctor nunc vitae diam eleifend, in maximus metus
+        sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi
+        finibus, vel tristique risus faucibus.
+      </p>
+      <p style="margin-bottom: 0 !important">
+        Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit.
+        Vestibulum auctor nunc vitae diam eleifend, in maximus metus
+        sollicitudin. Quisque vitae sodales lectus..
+      </p>
+    </section>
+
+    <div class="form-bg" id="div3">
+      <div class="form-title">
+         <div class="make-an-style"> Make An </div> <section>Appointment</section>
+      </div>
+      <p>This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor.</p>
+      <div class="make-an-form">
+        <form method="POST" action="{{ url_for('home') }}">
+          <table style="border-spacing: 6px;">
+          <tr><td><label for="doctor">Select a Doctor</label></td></tr>
+          <tr><td>
+          <select class="select" id="doctor">
+            <option value="">Login To Book an Appointment</option>
+          </select></td></tr>
+          <tr><td><label for="textarea">What are your symptoms?</label></td></tr>
+          <tr><td><textarea class="textbox" id="textarea" name="textarea"></textarea></td></tr>
+          <tr><td style="text-align: center;"><input type="file" class="buttons"></td></tr>
+          <tr><td style="text-align: center;"><button id="singlebutton"  class="buttons" type="submit" name="singlebutton" value="appointment" disabled>Submit
+           </button></td></tr></table>
+          </form>
+        </div>
+    </div>
+    <!-- ----CLINICAL DEPARTMENTS---- -->
+    <section class="clinical-depart">
+      <div class="line-1">We provide best Lab Test across India</div>
+      <div class="main-line">clinical <a>department</a></div>
+
+      <img
+        src="../static/images/icons.png"
+        alt=""
+        style="
+          width: 80%;
+          height: 100%;
+          margin-left: 9%;
+          margin-top: 8vh;
+          margin-bottom: 20vh;
+        "
+      />
+    </section>
+<!-- ------COUNTER SECTION--------- -->
+    <div class="counter-bg">
+      <section class="counters">
+        <div class="container">
+          <div>
+            <div class="counter" data-target="1538">0</div>
+            <div class="count-line"><hr></div>
+            <h3>Patients</h3>
+          </div>
+          <div>
+            <div class="counter" data-target="1006">0</div>
+            <div class="count-line"><hr></div>
+            <h3>Cases</h3>
+          </div>
+          <div>
+            <div class="counter" data-target="2115">0</div>
+            <div class="count-line"><hr></div>
+            <h3>Appointment</h3>
+          </div>
+          <div>
+            <div class="counter" data-target="200">0</div>
+            <div class="count-line"><hr></div>
+            <h3>Doctor</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+<div id="login" class="overlay">
+  <a class="closebtn" onclick="closeLogin()"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="overlay-content">
+    <h4>Login</h4>
+    <form method="POST" action="{{ url_for('home') }}">
+      <input class="login" type="text" name="username" placeholder="Username"><br>
+      <input class="login" type="password" name="password" placeholder="password"><br>
+      <button class="loginbutton" type="submit" name="submit" value="Login">Login</button><br>
+      <a style="color:white;" onclick="closeLogin();openRegister()">Register instead</a><br><br>
+    </form>
+  </div>
+</div>
+<div id="regi" class="overlay">
+  <a class="closebtn" onclick="closeRegister()"><i class="fa fa-times" aria-hidden="true"></i></a>
+  <div class="overlay-content">
+    <h4>Register</h4>
+    <form method="POST" action="{{ url_for('home') }}">
+      <table>
+        <tr><td colspan=2><input class="register" type="text" name="name" placeholder="Full Name"></td></tr>
+        <tr><td colspan=2><input class="register" type="text" name="username" placeholder="Username"></td></tr>
+        <tr><td><input class="register-2" type="password" name="password" placeholder="Password"></td>
+        <td><input class="register-2" type="password" name="verifypassword" placeholder="Verify Password"></td></tr>
+        <tr><td colspan=2><input class="register" type="email" name="email" placeholder="Email ID"></td></tr>
+        <tr><td colspan=2><input class="register" type="text" name="phone" placeholder="Phone Number"></td></tr>
+        <tr><td colspan=2><textarea class="register" type="text" style="padding:5px;" name="address" placeholder="Address"></textarea></td></tr>
+        <tr><td colspan=2><select class="type" name="type"><option value="Doctor">Doctor</option><option value="Patient">Patient</option></select></td></tr>
+        <tr><td colspan=2><button class="loginbutton" type="" name="submit" value="Register">Register</button></td></tr>
+        <tr><td colspan=2><a style="color:white;" onclick="openLogin();closeRegister()">Login instead</a></td></tr>
+      </table>
+    </form>
+  </div>
+</div>
+<!-- ---FOOTER---- -->
+<footer>
+  <a href="#"><button class="footsocials face"><i class="fa fa-facebook" aria-hidden="true"></i></button></a>
+  <a href="#"><button class="footsocials insta"><i class="fa fa-instagram" aria-hidden="true"></i></button></a>
+  <a href="#"><button class="footsocials yt"><i class="fa fa-youtube-play" aria-hidden="true"></i></button></a>
+ <a href="#"><button class="footsocials twit"><i class="fa fa-twitter" aria-hidden="true"></i></button></a>
+ <a href="#"><button class="footsocials ln"><i class="fa fa-linkedin" aria-hidden="true"></i></button></a>
+  <div class="foot-text">© 2022 Birla High School. Presented to you by Divit Periwal and Suvansh Agarwal</div>
+</footer>
+
+<script>
+  function openLogin() {
+    document.getElementById("login").style.width = "100%";
+  }
+  function closeLogin() {
+    document.getElementById("login").style.width = "0%";
+  }
+  function openRegister() {
+    document.getElementById("regi").style.width = "100%";
+  }
+  function closeRegister() {
+    document.getElementById("regi").style.width = "0%";
+  }
+</script>
+  </body>
+  <script src="../static/js/home.js"></script>
+</html>

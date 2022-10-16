@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Welcome to SmartMart</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/Login-Form-Basic-icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/responsive-navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}"><span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
+                        <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5v-1zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"></path>
+                        <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5v-1zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
+                    </svg></span><span style="width: 100%;">Smart Mart</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <form action="{{ url_for('index') }}" method="post">
+                </form>
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('index') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cart') }}">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<p style="margin-left:1vw">Welcome {{ user }}! You are logged in as a buyer.</p>
+	<div class="row shadow d-flex justify-content-center" style="width: 70vw;padding: 5vmin;margin-left: 15vw;margin-right: 15vw;margin-top: 2vh;margin-bottom: 2vh;border-radius: 12vmin;">
+        <form action="{{ url_for('index') }}" method="post"><div class="row gy-2 gx-3">
+            <div class="col-auto">
+                <label class="form-label">Sorting:</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="radio" id="formCheck-1" name="np" value="Name" checked="checked">
+                <label class="form-check-label" for="formCheck-1">Name</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="radio" id="formCheck-1" name="np" value="Price">
+                <label class="form-check-label" for="formCheck-1">Price</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="radio" id="formCheck-2" name="ad" value="asc" checked="checked">
+                <label class="form-check-label" for="formCheck-2">Ascending</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-check-input" type="radio" id="formCheck-2" name="ad" value="desc">
+                <label class="form-check-label" for="formCheck-2">Descending</label>
+            </div>
+        </div>
+        <div class="row gy-2 gx-3 align-items-center">
+            <div class="col-auto">
+                <label class="form-label">Price Range:</label>
+            </div>
+            <div class="col-auto"><input class="form-control form-control-user" id="min" name="min" type="number" min="{{ min }}" max="{{ max }}" value="{{ min }}" placeholder="Min" onchange="minmax()"></div> to
+            <div class="col-auto"><input class="form-control form-control-user" id="max" name="max" type="number" min="{{ min }}" max="{{ max }}" value="{{ max }}" placeholder="Max" onchange="minmax()"></div>
+        </div>
+        <div class="row gy-2 gx-3 align-items-center">
+			<button class="btn btn-primary col-6" style="margin-top:2vh;" type="submit" name="filter" value="filter">Apply</button>
+		</div></form>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+				{%for i in items:%}
+                <tr>
+                    <td class="align-middle"><div style="background: center no-repeat url('/static/images/{{ i[2] }}');;
+						background-size:contain;
+						width:10vw;
+						aspect-ratio:1/1;
+						border-radius: 8px;" ></div></td>
+                    <td class="align-middle"><div style="width:10vw;word-wrap:break-word;overflow:auto">{{ i[1] }}</div></td>
+                    <td class="align-middle"><div style="width:40vw;word-wrap:break-word;overflow:auto">{{ i[3] }}</div></td>
+                    <td class="align-middle"><div style="width:7vw;word-wrap:break-word;">₹{{ i[4] }}</div></td>
+					<form action="{{ url_for('index') }}" method="post">
+                    	<td class="align-middle"><div style="width:7vw;"><input type="number" id="quantity" value="1" name="{{ i[0] }}" min="1" max="{{ i[5] }}" style="width:7vw;"></div></td>
+                    	<td class="align-middle"><div style="width:7vw;"><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit">Add to Cart</button></div></td>
+					</form>
+                </tr>
+				{%endfor%}
+				<tr><td style="text-align: center">{{ msg }}</td></tr>
+            </tbody>
+        </table>
+        <div class="text-center" style="width: 100vw;">
+        <form method="POST" action="{{ url_for('index') }}">
+            <button class="btn btn-user w-80 border-0" type="submit" name="nextprev" value="prev"{{ prev }}>Previous Page </button>|
+            <button class="btn btn-user w-80 border-0" type="submit" name="nextprev" value="next"{{ next }}>Next Page</button>
+        </form></div>
+    </div>
+<script>
+	let min=document.getElementById("min");
+    let max=document.getElementById("max");
+    function minmax() {
+        min.setAttribute("max", max.value);
+        max.setAttribute("min", min.value)};
+</script>
+    <script src="{{ url_for('static',filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>
