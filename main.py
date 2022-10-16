@@ -126,8 +126,7 @@ def index():
                         if (len(a)-session['itemno'])>20:
                             session['itemno']+=20
                     elif request.form["nextprev"]=="prev":
-                        if (session['itemno']-len(a))>20:
-                            session['itemno']-=20
+                        session['itemno']-=20
                 elif "search" in request.form:
                     a=search(request.form['search'])
                     m=1
@@ -148,7 +147,7 @@ def index():
                 a=browse()
             if not (len(a)-session['itemno'])>20:
                 next=" disabled"
-            if not (session['itemno']-len(a))>0:
+            if not (session['itemno'])>0:
                 prev=" disabled"
             if (len(a)-session['itemno'])>20:
                 for i in range(session['itemno'],session['itemno']+20):

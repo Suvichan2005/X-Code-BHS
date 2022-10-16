@@ -24,8 +24,8 @@
       </div>
       <div class="navgrp right" style="width: 62vw">
         <a href="#hero" class="nav-item active">Home</a>
-        <a href="#div2" class="nav-item">Why HelthOne</a>
-        <a href="#div3" class="nav-item">Appointment</a>
+        <a href="#why" class="nav-item">Why HelthOne</a>
+        <a href="#appointments" class="nav-item">Appointment</a>
         <a href="{{ url_for('logout') }}">
           <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 18px; padding-top: 2px; padding-left: -4px"></i>
         </a>
@@ -121,7 +121,7 @@
 
     <!-------------SECTION-2------ -->
 
-    <section class="section-2" id="div2">
+    <section class="section-2" id="why">
       <div class="section-2-line-1">Medical health at its best</div>
       <div class="family-value">
         We Value Your<br /><a class="family-style">Family</a> More<br />Than
@@ -141,7 +141,7 @@
     </section>
 
     <!------for doctors------>
-    <section class="appointments" id="div3">
+    <section class="appointments" id="appointments">
       <div class="a-list form-bg">
         <table>
           {%for i in appointments%}

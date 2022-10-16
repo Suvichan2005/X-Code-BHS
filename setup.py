@@ -1,0 +1,23 @@
+import mysql.connector
+db=mysql.connector.connect(host="localhost",user="root",password="1234",)
+c=db.cursor()
+db.autocommit=True
+c.execute("CREATE DATABASE IF NOT EXISTS xcodebhs;")
+c.execute("use xcodebhs;")
+c.execute("""create table if not exists users (username varchar(15) primary key,password varchar(15) not null,usertype enum("patient","doctor"));""")
+c.execute("create table if not exists userdata (username varchar(15) primary key,name varchar(50),address varchar(300),phone_no varchar(10),email_id varchar(50),foreign key (username) references users(username) on delete cascade);")
+c.execute("create table if not exists items (itemid int primary key auto_increment,name varchar(30),imgid varchar(100),description varchar(300),price int,qty int);")
+c.execute("create table if not exists orders (patient_username varchar(15) not null,billno int primary key auto_increment)")
+c.execute("drop table if exists cart")
+c.execute("create table cart (itemid int,name varchar(30),imgid varchar(100),description varchar(300),price int,qty int,max_qty int);")
+c.execute("create table if not exists appointments (username varchar(50),doc_name varchar(50),symptoms varchar (500),imgid varchar(100))")
+
+c.execute("insert into users values ('patient','abc','patient')")
+c.execute("insert into users values ('doctor','abc','doctor')")
+c.execute("insert into userdata values ('patient','John Doe','123 Abc Street',9999999999,'john@gmail.com');")
+c.execute("insert into userdata values ('doctor','Jack Sparrow','321 Xyz Street',8888888888,'jack@gmail.com');")
+c.execute("insert into appointments values ('patient','doctor','Cough and Cold','testimonial-1.png')")
+c.execute("insert into items (name,imgid,description,price,qty) values ('Blood Test 1','blood.png',' A blood test is a lab analysis of things that may be found in your blood.',199,1000)")
+c.execute("insert into items (name,imgid,description,price,qty) values ('Blood Test 2','blood.png',' A blood test is a lab analysis of things that may be found in your blood.',179,1000)")
+c.execute("insert into items (name,imgid,description,price,qty) values ('Blood Test 3','blood.png',' A blood test is a lab analysis of things that may be found in your blood.',219,1000)")
+c.execute("insert into items (name,imgid,description,price,qty) values ('Blood Test 4','blood.png',' A blood test is a lab analysis of things that may be found in your blood.',100,1000)")
