@@ -44,7 +44,7 @@ ScrollReveal().reveal('.hero-line-2, .pa',{delay:500, origin:'left'});
 ScrollReveal().reveal('.section-2-line-1,.family-value' , {delay:100, origin:'left'});
 ScrollReveal().reveal('.butn', {delay:500, origin:'bottom'});
 ScrollReveal().reveal('.ba', {delay:200, origin:'right'});
-ScrollReveal().reveal('.make-an-style', {delay:100, origin:'right'});
+ScrollReveal().reveal('.make-an-style,.app', {delay:100, origin:'right'});
 ScrollReveal().reveal('.line-1', {delay:200, origin:'top'});
 ScrollReveal().reveal('.main-line', {delay:200, origin:'bottom'});
 ScrollReveal().reveal('.na', {delay:200, origin:'bottom'});

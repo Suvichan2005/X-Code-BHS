@@ -81,6 +81,31 @@ html{
   animation: fadeIn 1s;
 }
 
+.butn {
+  background: #39C5DE;
+  border-radius: 50px;
+  line-height: 25px;
+  font-weight: 400;
+  border: 2px solid transparent;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  border-color: #39C5DE;
+  font-size: 15px;
+  padding: 9px 34px;
+  text-decoration: none;
+  box-shadow: none;
+  position: absolute;
+  margin-left: 12.5vw;
+  margin-top: 64vh;
+  cursor: pointer;
+}
+.butn:hover{
+  background:#0284D0 ;
+  cursor: pointer;
+  transition: ease 0.5s;
+  border-color: #0284D0;
+}
+
 
 /* -----HERO ELEMENT----- */
 

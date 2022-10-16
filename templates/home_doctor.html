@@ -20,12 +20,13 @@
   <body>
     <div class="navbar" id="mynavbar">
       <div class="navgrp left" style="width: 15vw">
-        <a href="#home">HelthOne</a>
+        <a href="#hero">HelthOne</a>
       </div>
       <div class="navgrp right" style="width: 62vw">
         <a href="#hero" class="nav-item active">Home</a>
         <a href="#why" class="nav-item">Why HelthOne</a>
         <a href="#appointments" class="nav-item">Appointment</a>
+        <a href="#clinic" class="nav-item">Clinical Department</a>
         <a href="{{ url_for('logout') }}">
           <i class="fa fa-sign-in" aria-hidden="true" style="font-size: 18px; padding-top: 2px; padding-left: -4px"></i>
         </a>
@@ -39,12 +40,10 @@
           Medical <a class="item-1">Health</a>
         </section>
       </div>
-      <p>
-        Purus gravida quis blandit turpis cursus in hac habitasse platea. Et
-        sollicitudin ac orci phasellus egestas. Vulputate eu scelerisque felis
-        imperdiet proin fermentum leo vel. Vitae elementum.
+      <p class="pa">
+        Healthcare is amongst the one of the basic necessity’s required by an individual to stay fit in this world. It’s vital to ensure a healthy body as it leads to a healthy environment which will eventually lead to a healthy nation. 
       </p>
-      <a href="#"><button class="btn">Learn More</button></a>
+      <a href="#"><button class="butn">Learn More</button></a>
     </section>
 
     <!-- -----FLIPING CARDS---- -->
@@ -58,7 +57,7 @@
     >
       <tr>
         <td class="fliptd">
-          <div class="flip-card">
+          <div class="flip-card ca">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img
@@ -78,7 +77,7 @@
           </div>
         </td>
         <td class="fliptd">
-          <div class="flip-card">
+          <div class="flip-card na">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img
@@ -98,7 +97,7 @@
         </td>
 
         <td class="fliptd">
-          <div class="flip-card">
+          <div class="flip-card ba">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <img
@@ -127,16 +126,11 @@
         We Value Your<br /><a class="family-style">Family</a> More<br />Than
         Anyone<br />Else.
       </div>
-      <p>
-        Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit.
-        Vestibulum auctor nunc vitae diam eleifend, in maximus metus
-        sollicitudin. Quisque vitae sodales lectus. Nam porttitor justo sed mi
-        finibus, vel tristique risus faucibus.
+      <p class="ba">
+        We here at HelthOne value your and your families Health, as everyone should. If you choose to be with us, you will get free consultations with the top doctors in the world, along with the best lab tests in the country.
       </p>
-      <p style="margin-bottom: 0 !important">
-        Curabitur mollis bibendum luctus. Duis suscipit vitae dui sed suscipit.
-        Vestibulum auctor nunc vitae diam eleifend, in maximus metus
-        sollicitudin. Quisque vitae sodales lectus..
+      <p style="margin-bottom: 0 !important" class="ba">
+        Being healthy is about having good physical health and being mentally and socially fit. A healthy person can be more focused, more determined and can lead a happy life. If we look into human history, the biggest asset to human beings is good health and a healthy mind.
       </p>
     </section>
 
@@ -159,12 +153,13 @@
           {%endfor%}
         </table>
       </div>
+      <div id="clinic"></div>
     </section>
   
 
 
     <!-- ----CLINICAL DEPARTMENTS---- -->
-    <section class="clinical-depart">
+    <section class="clinical-depart na" >
       <div class="line-1">We provide best Lab Test across India</div>
       <div class="main-line">clinical <a>department</a></div>
 
