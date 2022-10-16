@@ -1,6 +1,5 @@
 const counters = document.querySelectorAll('.counter');
 const speed = 200;
-
 counters.forEach(counter => {
 	const updateCount = () => {
 		const target = +counter.getAttribute('data-target');
@@ -13,14 +12,11 @@ counters.forEach(counter => {
 			counter.innerText = target;
 		}
 	};
-
 	updateCount();
 });
-
 window.onscroll = function () {
   myFunction();
 };
-
 var navbar = document.getElementById("mynavbar");
 var sticky = navbar.offsetTop;
 function myFunction() {
